@@ -1,0 +1,236 @@
+:root {
+    --dark: #130f1a;
+    --blue: #6abcff;
+    --peach: #ffddca;
+    --orange: #f9a01b;
+    --mint: #d9f7f6;
+    --surface: #ffffff;
+    --muted: rgba(255, 255, 255, 0.75);
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: 'Archivo Black', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    background: linear-gradient(180deg, #130f1a 0%, #0f0c12 45%);
+    color: var(--peach);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    padding: 18px;
+}
+
+.wrap {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 12px;
+}
+
+h1 {
+    text-align: center;
+    color: var(--blue);
+    margin: 6px 0 14px;
+    font-size: 35px;
+}
+
+.subtitle {
+    text-align: center;
+    color: var(--muted);
+    font-size: 13px;
+    margin-bottom: 8px;
+}
+
+/* controls */
+.searchCenter {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 12px;
+    gap: 8px;
+}
+
+input[type=number] {
+    padding: 10px 12px;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    width: 140px;
+    background: transparent;
+    color: var(--peach);
+    text-align: center;
+}
+
+button.btn {
+    background: linear-gradient(90deg, var(--blue), #9fe4ff);
+    color: var(--dark);
+    border: none;
+    padding: 10px 12px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 800;
+}
+
+/* periodic grid */
+.periodic-wrap {
+    overflow: auto;
+    padding: 8px;
+    border-radius: 12px;
+}
+
+.periodic {
+    display: grid;
+    grid-template-columns: repeat(18, minmax(48px, 1fr));
+    gap: 8px;
+    align-items: stretch;
+}
+
+/* element button */
+.cell {
+    min-height: 66px;
+    display: flex;
+    align-items: stretch;
+}
+
+.empty {
+    visibility: hidden;
+    min-height: 66px;
+}
+
+.elem {
+    width: 100%;
+    border-radius: 8px;
+    background: linear-gradient(180deg, var(--orange), #ffd7a8);
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    padding: 6px;
+    transition: transform .12s ease, box-shadow .12s ease;
+    color: var(--dark);
+    font-weight: 800;
+}
+
+.elem:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.35);
+    background: linear-gradient(180deg, var(--mint), #dff7f7);
+}
+
+.symbol {
+    font-size: 20px;
+    line-height: 1;
+}
+
+.z {
+    font-size: 11px;
+    color: rgba(19, 15, 26, 0.55);
+    margin-top: 4px;
+}
+
+/* details */
+.details {
+    margin-top: 18px;
+    background: linear-gradient(180deg, #121018 70%, #161221);
+    padding: 18px;
+    border-radius: 12px;
+    color: var(--peach);
+    box-shadow: 0 12px 36px rgba(0, 0, 0, 0.5);
+}
+
+.details h2 {
+    margin: 0 0 8px;
+    color: var(--blue);
+    font-size: 20px;
+}
+
+.meta {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 8px;
+}
+
+.chip {
+    background: linear-gradient(90deg, var(--peach), #ffdcbf);
+    padding: 8px 12px;
+    border-radius: 999px;
+    color: var(--dark);
+    font-weight: 800;
+}
+
+/* responsive tweaks */
+@media (max-width: 1000px) {
+    .periodic {
+        grid-template-columns: repeat(11, minmax(44px, 1fr));
+    }
+    .cell {
+        min-height: 56px;
+    }
+}
+
+@media (max-width: 640px) {
+    .periodic {
+        grid-template-columns: repeat(6, minmax(40px, 1fr));
+    }
+    .symbol {
+        font-size: 16px;
+    }
+    .z {
+        font-size: 10px;
+    }
+}
+
+.toggle-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px;
+}
+
+.toggle {
+    -webkit-appearance: none;
+    width: 80px;
+    height: 34px;
+    background: #ccc;
+    border-radius: 34px;
+    position: relative;
+    outline: none;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.knob {
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    width: 26px;
+    height: 26px;
+    background: white;
+    border-radius: 50%;
+    transition: transform 0.3s;
+}
+
+.images img {
+    display: none;
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    position: relative;
+}
+
+button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 8px;
+    background: #4CAF50;
+    color: white;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #45a049;
+}

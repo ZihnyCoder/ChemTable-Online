@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Interactive Periodic Table — s/p/d blocks (prefilled)</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="wrap">
+        <h1>ChemTable Online</h1>
+        <div class="subtitle">s, p & d blocks shown. f-block kept blank</div>
+
+        <div class="searchCenter">
+            <input id="searchNumber" type="number" min="1" max="118" placeholder="Proton #" />
+            <button id="searchBtn" class="btn">Find</button>
+        </div>
+        
+        <p>
+            <div class="toggle-container">
+                <div class="toggle" id="threeToggle">
+                    <div class="knob" id="knob"></div>
+                </div>
+            </div>
+            <div class="subtitle"><span style="color:#EAD637">CLICK ME!</span></div>
+        </p>
+
+        <div class="images">
+            <img id="img1" src="Electro Valence Blocks.png" alt="Electro Valence Blocks">
+            <img id="img2" src="Atomic Radius.png" alt="Atomic Radius">
+        </div>
+
+        <div class="periodic-wrap">
+            <div class="periodic" id="periodic"></div>
+        </div>
+
+        <div class="details" id="details" aria-live="polite">
+            <h2 id="dtTitle">Select an element</h2>
+            <div class="meta" id="metaChips"></div>
+            <div id="detailRows">
+                <div><strong>Symbol:</strong> <span id="dSymbol">—</span></div>
+                <div><strong>Atomic number:</strong> <span id="dNumber">—</span></div>
+                <div><strong>Group:</strong> <span id="dGroup">—</span></div>
+                <div><strong>Electron config:</strong> <span id="dConfig">[placeholder]</span></div>
+                <div><strong>Atomic radius:</strong> <span id="dRadius">[placeholder]</span></div>
+            </div>
+            <p style="margin-top:12px;color:rgba(255,255,255,0.6)"><em>Explanation:</em> <span id="dExplain">[write your explanation here]</span></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
